@@ -13,6 +13,7 @@
 		969D84A32B591C19008B9DA4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 969D84A22B591C19008B9DA4 /* Preview Assets.xcassets */; };
 		969D84AA2B591EB8008B9DA4 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969D84A92B591EB8008B9DA4 /* Order.swift */; };
 		969D84AC2B592154008B9DA4 /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969D84AB2B592154008B9DA4 /* AddressView.swift */; };
+		969D84AE2B592621008B9DA4 /* CheckOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969D84AD2B592621008B9DA4 /* CheckOutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		969D84A22B591C19008B9DA4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		969D84A92B591EB8008B9DA4 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		969D84AB2B592154008B9DA4 /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
+		969D84AD2B592621008B9DA4 /* CheckOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				969D84A92B591EB8008B9DA4 /* Order.swift */,
 				969D849D2B591C18008B9DA4 /* ContentView.swift */,
 				969D84AB2B592154008B9DA4 /* AddressView.swift */,
+				969D84AD2B592621008B9DA4 /* CheckOutView.swift */,
 				969D849F2B591C19008B9DA4 /* Assets.xcassets */,
 				969D84A12B591C19008B9DA4 /* Preview Content */,
 			);
@@ -144,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				969D84AC2B592154008B9DA4 /* AddressView.swift in Sources */,
+				969D84AE2B592621008B9DA4 /* CheckOutView.swift in Sources */,
 				969D84AA2B591EB8008B9DA4 /* Order.swift in Sources */,
 				969D849E2B591C18008B9DA4 /* ContentView.swift in Sources */,
 				969D849C2B591C18008B9DA4 /* Cupcake_CornerApp.swift in Sources */,
