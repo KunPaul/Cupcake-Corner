@@ -9,7 +9,7 @@ import SwiftUI
 
 class Order: ObservableObject, Codable {
     
-    static let types = ["Vanilla", "Strawberry", "Chocolate","Rainbow"]
+    static let types = ["Vanilla", "Strawberry", "Chocolate", "Rainbow"]
     
     @Published var type = 0
     @Published var quantity = 3
@@ -36,6 +36,26 @@ class Order: ObservableObject, Codable {
         }
 
         return true
+    }
+    
+    var cost: Double {
+        // $2 per cake
+        var cost = Double(quantity) * 2
+
+        // complicated cakes cost more
+        cost += (Double(type) / 2)
+
+        // $1/cake for extra frosting
+        if extraFrosting {
+            cost += Double(quantity)
+        }
+
+        // $0.50/cake for sprinkles
+        if addSprinkles {
+            cost += Double(quantity) / 2
+        }
+
+        return cost
     }
     
 }
