@@ -29,7 +29,7 @@ struct AddressView: View {
                     Text("Check out")
                 }
             }
-            .disabled(orderViewModel.order.hasValidAddress == false)
+            .disabled(orderViewModel.hasValidAddress == false)
             
         }
         .navigationTitle("Delivery details")

@@ -27,7 +27,7 @@ struct CheckOutView: View {
                 }
                 .frame(height: 233)
 
-                Text("Your total is \(orderViewModel.order.cost, format: .currency(code: "USD"))")
+                Text("Your total is \(orderViewModel.cost, format: .currency(code: "USD"))")
                     .font(.title)
                 
                 Button("Place Order") {

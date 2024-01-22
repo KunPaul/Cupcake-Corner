@@ -7,14 +7,28 @@
 
 import SwiftUI
 
-class Order: ObservableObject, Codable {
+protocol Orderable: Codable {
+    var type: Int { get set}
+    var quantity: Int { get set }
+    
+    var extraFrosting:Bool { get set }
+    var addSprinkles: Bool { get set }
+    var specialRequestEnabled:Bool { get set}
+    
+    var name: String { get set}
+    var streetAddress: String { get set }
+    var city: String { get set }
+    var zip: String { get set}
+}
+
+class Order: Orderable {
     
     static let types = ["Vanilla", "Strawberry", "Chocolate", "Rainbow"]
     
-    @Published var type = 0
-    @Published var quantity = 3
+     var type = 0
+     var quantity = 3
     
-    @Published var specialRequestEnabled = false {
+     var specialRequestEnabled = false {
         didSet {
             if specialRequestEnabled == false {
                 extraFrosting = false
@@ -22,43 +36,15 @@ class Order: ObservableObject, Codable {
             }
         }
     }
-    @Published var extraFrosting = false
-    @Published var addSprinkles = false
+    var extraFrosting = false
+    var addSprinkles = false
     
-    @Published var name = ""
-    @Published var streetAddress = ""
-    @Published var city = ""
-    @Published var zip = ""
+    var name = ""
+    var streetAddress = ""
+    var city = ""
+    var zip = ""
     
-    var hasValidAddress: Bool {
-        if name.isEmpty || streetAddress.isEmpty || city.isEmpty || zip.isEmpty {
-            return false
-        }
-
-        return true
-    }
-    
-    var cost: Double {
-        // $2 per cake
-        var cost = Double(quantity) * 2
-
-        // complicated cakes cost more
-        cost += (Double(type) / 2)
-
-        // $1/cake for extra frosting
-        if extraFrosting {
-            cost += Double(quantity)
-        }
-
-        // $0.50/cake for sprinkles
-        if addSprinkles {
-            cost += Double(quantity) / 2
-        }
-
-        return cost
-    }
-    
-    
+   
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
 
